@@ -1,0 +1,20 @@
+CREATE TABLE baby_supply_store (id INTEGER PRIMARY KEY, product_name TEXT, retail_price INTEGER, wholesale_price INTEGER, quantity INTEGER);
+
+INSERT INTO baby_supply_store VALUES (1, "crib", 100, 50, 10);
+INSERT INTO baby_supply_store VALUES (2, "crib sheets", 20, 10, 40);
+INSERT INTO baby_supply_store VALUES (3, "pacifier", 10, 5, 100);
+INSERT INTO baby_supply_store VALUES (4, "bottle", 5, 2, 150);
+INSERT INTO baby_supply_store VALUES (5, "diapers", 20, 10, 200);
+INSERT INTO baby_supply_store VALUES (6, "wet wipes", 15, 7, 175);
+INSERT INTO baby_supply_store VALUES (7, "burp clothes", 25, 12, 95);
+INSERT INTO baby_supply_store VALUES (8, "stroller", 200, 100, 12);
+INSERT INTO baby_supply_store VALUES (9, "car seat", 250, 120, 8);
+INSERT INTO baby_supply_store VALUES (10, "swing", 80, 40, 6);
+INSERT INTO baby_supply_store VALUES (11, "baby carrier", 175, 60, 22);
+INSERT INTO baby_supply_store VALUES (12, "books", 5, 2, 55);
+INSERT INTO baby_supply_store VALUES (13, "toys", 20, 10, 200);
+INSERT INTO baby_supply_store VALUES (14, "onesies", 20, 10, 30);
+INSERT INTO baby_supply_store VALUES (15, "bouncy seat", 90, 45, 9);
+
+SELECT * FROM baby_supply_store ORDER BY retail_price;
+SELECT MAX(quantity) FROM baby_supply_store;
