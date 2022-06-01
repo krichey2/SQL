@@ -1,3 +1,5 @@
+--Create a baby store database
+
 CREATE TABLE baby_supply_store (id INTEGER PRIMARY KEY, product_name TEXT, retail_price INTEGER, wholesale_price INTEGER, quantity INTEGER);
 
 INSERT INTO baby_supply_store VALUES (1, "crib", 100, 50, 10);
