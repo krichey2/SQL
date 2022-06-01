@@ -1,3 +1,4 @@
+-- Create a database to track student grades.
 
 CREATE TABLE student_grades (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,7 +19,12 @@ INSERT INTO student_grades (name, number_grade, fraction_completed)
 INSERT INTO student_grades (name, number_grade, fraction_completed)
     VALUES ("Winstonia", 82, 0.9045);
 
+#1 Select all of the rows, and display the name, number_grade, and percent_completed
+
 SELECT name, number_grade, ROUND(fraction_completed * 100) AS percent_completed FROM student_grades; 
+
+#2 How many students have earned which letter_grade?
+
 SELECT COUNT (*),
 CASE
 WHEN number_grade > 90 THEN "A"
