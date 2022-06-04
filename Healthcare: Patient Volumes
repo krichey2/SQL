@@ -1,0 +1,83 @@
+
+
+-- How many encounters did we have in 2019?
+SELECT COUNT(*) 
+FROM healthcare.encounters
+WHERE start >= 2019-01-01 
+AND start < 2020-01-01
+
+--3153
+
+
+-- How many distinct patients did we treat in 2019?
+SELECT COUNT(DISTINCT PATIENT)
+FROM healthcare.encounters
+WHERE start >= 2019-01-01 
+AND start < 2020-01-01;
+
+--916
+
+-- How many inpatient encounters did we have?
+
+SELECT COUNT(*)
+FROM healthcare.encounters
+WHERE start >= 2019-01-01 
+AND start < 2020-01-01
+AND ENCOUNTERCLASS = 'inpatient';
+
+--87
+
+-- How many ambulatory encounters did we have?
+SELECT COUNT(*)
+FROM healthcare.encounters
+WHERE start >= 2019-01-01 
+AND start < 2020-01-01
+AND ENCOUNTERCLASS = 'ambulatory';
+
+--1277
+
+--Reviewing Encounter Classes
+
+SELECT DISTINCT ENCOUNTERCLASS
+FROM healthcare.encounters;
+
+SELECT COUNT(*)
+FROM healthcare.encounters
+WHERE start >= 2019-01-01 
+AND start < 2020-01-01
+AND ENCOUNTERCLASS IN ('ambulatory','wellness','outpatient','urgentcare');
+
+--2909
+
+--How many encounters did we have before the year 2020?
+SELECT COUNT(*)
+FROM HEALTHCARE.ENCOUNTERS
+WHERE start <=2020-01-01;
+
+--49466
+
+--How many distinct patients did we treat before the year 2020?
+
+SELECT COUNT(DISTINCT patient)
+FROM HEALTHCARE.ENCOUNTERS
+WHERE start <=2020-01-01;
+
+--1158
+
+--How many distinct encounter classes are documented in the HEALTHCARE.ENCOUNTERS table?
+
+SELECT DISTINCT ENCOUNTERCLASS
+FROM HEALTHCARE.ENCOUNTERS
+WHERE start <=2020-01-01;
+
+--ambulatory, wellness, outpatient, urgentcare, emergency, inpatient
+
+
+--How many inpatient and ambulatory encounters did we have before 2020?
+
+SELECT COUNT(*)
+FROM HEALTHCARE.ENCOUNTERS
+WHERE start <=2020-01-01
+AND ENCOUNTERCLASS IN ('inpatient', 'ambulatory');
+
+--19225
